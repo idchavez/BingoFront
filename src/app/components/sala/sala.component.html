@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Gran Buda</title>
+</head>
+<body>
+  <header>
+    <h1>El Bingo Gran Buda</h1>
+  </header>
+  <!--
+  <main>
+    <div>
+      <h1>Juego de Bingo</h1>
+      <button (click)="iniciarJuego()">Iniciar Juego</button>
+      <button (click)="sortearNumero()">Sortear Número</button>
+      <div *ngIf="tarjeta">
+        <h2>Tarjeta:</h2>
+        <table>
+          <tr *ngFor="let fila of tarjeta">
+            <td *ngFor="let num of fila">
+              {{ num === 0 ? '**' : num }}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div *ngIf="numeroSorteado">
+        <p>Número sorteado: {{ numeroSorteado }}</p>
+      </div>
+    </div>
+  </main>
+  -->
+
+  <main>
+    <div id="bingo-title">BINGO 75</div>
+
+
+    <div class="text-center cell-big">
+      <h2 class="mt-5" id="bingo-title">Jugadores</h2>
+      <table class="players-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jugador 1</td>
+          </tr>
+          <tr>
+            <td>Jugador 2</td>
+          </tr>
+          <tr>
+            <td>Jugador 3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+    <div class="bingo-board cell-big">
+      <table>
+        <tbody>
+          <tr *ngFor="let fila of tarjeta">
+            <button class="bingo-cell btn btn-primary" *ngFor="let num of fila">
+              {{ num === 0 ? '**' : num }}
+            </button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container cell-big text-center py-5">
+      <h2  id="bingo-title">Opciones:</h2>
+      <button (click)="sortearNumero()" class="btn btn-primary">Lanzar Bombo</button>
+      <br/>
+      <div class="alert-sorteo mt-3" *ngIf="numeroSorteado">
+        <span>Sorteo:</span>
+        <strong>{{ numeroSorteado }}</strong>
+      </div>
+      <div class="container text-center mt-3">
+        <button class="btn btn-primary">Bingo</button>
+      </div>
+    </div>
+    
+  </main>
+
+  <footer>
+    &copy; 2024 Reto Tecnico - Ivan Dario Chavez
+  </footer>
+</body>
+</html>

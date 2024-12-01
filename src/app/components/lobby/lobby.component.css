@@ -1,0 +1,19 @@
+.alert {
+  background-color: #072cff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+/*
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.parpadeo {
+  animation: parpadeo 5s infinite;
+}*/
