@@ -10,6 +10,7 @@ export class SalaComponent {
 
   tarjeta: number[][];
   numeroSorteado: number;
+  sesiones: any[] = [];
 
   constructor(private juegoService: JuegoService) {}
 

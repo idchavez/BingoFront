@@ -12,14 +12,14 @@ style="background: linear-gradient( rgb(250, 122, 3), rgb(0, 0, 0))">
 
                       <h2 class="fw-bold mb-2">El Bingo Gran Buda</h2>
 
-                      <form>
+                      <form (ngSubmit)="login()">
                           <div data-mdb-input-init class="form-outline form-white mb-4">
-                              <label for="usuario"></label>
-                              <input class="form-control form-control-lg" type="text" placeholder="Usuario" id="usuario" name="usuario" required/>
+                              <label for="username"></label>
+                              <input class="form-control form-control-lg" type="text" placeholder="Usuario" id="username" [(ngModel)]="username" name="username" required/>
                           </div>
                           <div data-mdb-input-init class="form-outline form-white mb-4">
                               <label class="form-label" for="password"></label>
-                              <input type="password" class="form-control form-control-lg" placeholder="Contraseña" id="password" name="password" required/>
+                              <input type="password" class="form-control form-control-lg" placeholder="Contraseña" id="password" [(ngModel)]="password" name="password" required/>
                           </div>
                           <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5 mt-4" type="submit">
                               Iniciar sesión</button>
@@ -28,6 +28,7 @@ style="background: linear-gradient( rgb(250, 122, 3), rgb(0, 0, 0))">
                               </p>
                           </div>
                       </form>
+                      <p *ngIf="message">{{message}}</p>
                   </div>
               </div>
           </div>

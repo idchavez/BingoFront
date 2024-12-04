@@ -8,6 +8,8 @@ import { LobbyComponent } from './components/lobby/lobby.component';
 import { SalaComponent } from './components/sala/sala.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { SessionTableComponent } from './components/session-table/session-table.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LobbyComponent,
     SalaComponent,
-    LoginComponent
+    LoginComponent,
+    SessionTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

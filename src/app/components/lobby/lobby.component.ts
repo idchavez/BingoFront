@@ -1,3 +1,4 @@
+import { SessionService } from './../../services/session.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,11 +11,14 @@ export class LobbyComponent {
 
   contador: number = 60;
   interval: any;
+  //sesiones: any[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    private sesionService: SessionService) {}
 
   ngOnInit(): void {
     this.iniciarContador();
+    //this.cargarSesiones();
   }
 
   irASala() {
@@ -31,4 +35,16 @@ export class LobbyComponent {
       }
     }, 1000);
   }
+  /*
+  cargarSesiones(): void {
+    this.sesionService.obtenerSesiones().subscribe(
+      {
+      next: (data) => {
+         this.sesiones = data;
+      },
+      error: (err) => {
+        console.error("Error cargando sesiones: ", err)
+      }
+    });
+  }*/
 }
