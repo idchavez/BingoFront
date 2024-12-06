@@ -23,4 +23,21 @@ export class JuegoService {
     return this.httpClient.get<number[][]>(`${this.urlBase}/tarjeta`);
   }
 
+  marcarNumero(i: number, j: number, numeroSorteado: number, matriz: number[][]): Observable<number[][]> {
+    return this.httpClient.post<number[][]>(`${this.urlBase}/marcarNumero`, {
+      matriz,
+      numeroSorteado,
+      i,
+      j
+    });
+  }
+
+  validarBingo(tarjeta: number[][]): Observable<any> {
+    return this.httpClient.post(`${this.urlBase}/validar`, tarjeta);
+  }
+
+  reiniciarBombo(): Observable<any> {
+    return this.httpClient.post(`${this.urlBase}/reiniciar`, {});
+  }
+
 }

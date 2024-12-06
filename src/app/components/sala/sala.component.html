@@ -6,8 +6,10 @@
   <title>Bingo Gran Buda</title>
 </head>
 <body>
-  <header>
+  <header class="header-container">
     <h1>El Bingo Gran Buda</h1>
+
+    <button class="btn btn-primary" (click)="cerrarSesion()">Cerrar</button>
   </header>
   <!--
   <main>
@@ -45,10 +47,14 @@
     <div class="bingo-board cell-big">
       <table>
         <tbody>
-          <tr *ngFor="let fila of tarjeta">
-            <button class="bingo-cell btn btn-primary" *ngFor="let num of fila">
-              {{ num === 0 ? '**' : num }}
-            </button>
+          <tr *ngFor="let fila of tarjeta; let i = index">
+            <td *ngFor="let num of fila; let j = index">
+              <button class="bingo-cell btn btn-primary"
+              (click)="marcarNumero(i,j,num)"
+              [disabled]="num === 0">
+                {{ num === 0 ? '**' : num }}
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -63,7 +69,7 @@
         <strong>{{ numeroSorteado }}</strong>
       </div>
       <div class="container text-center mt-3">
-        <button class="btn btn-primary">Bingo</button>
+        <button class="btn btn-primary" (click)="validarBingo()">Bingo!</button>
       </div>
     </div>
 

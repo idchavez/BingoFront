@@ -7,9 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { LobbyComponent } from './components/lobby/lobby.component';
 import { SalaComponent } from './components/sala/sala.component';
 import { LoginComponent } from './components/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SessionTableComponent } from './components/session-table/session-table.component';
+import { JwtInterceptor } from './jwt-interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,10 @@ import { SessionTableComponent } from './components/session-table/session-table.
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

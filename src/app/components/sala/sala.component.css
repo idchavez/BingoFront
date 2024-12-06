@@ -27,12 +27,38 @@ body {
   text-align: center;
 }
 
-header, footer {
+.bingo-cell[disabled] {
+  background-color: #ccc;
+  color: #000;
+  cursor: not-allowed;
+}
+
+footer {
   background-color: #000000;
   color: white;
   text-align: center;
   padding: 10px 0;
 }
+
+.header-container {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px; /* Opcional, para espaciado */
+}
+
+.header-container h1 {
+  margin: 0 auto; /* Centrar horizontalmente */
+  flex: 1;
+  text-align: center; /* Centrar el texto */
+}
+
+.header-container button {
+  margin-left: auto; /* Asegura que el botón esté a la derecha */
+}
+
 
 main {
   flex: 1;
